@@ -5,14 +5,17 @@
 }
 
 :root {
-  --bg: #f7f3ec;
-  --surface: #ede8df;
+  --bg: #faf5ee;
+  --surface: #f0e6d3;
   --card: #ffffff;
-  --accent: #b85c38;
-  --accent-light: #c97a56;
-  --text: #2a1f14;
-  --text-muted: #7a6555;
-  --border: #d9d2c5;
+  --hero-bg: #1c1007;
+  --accent: #c4541f;
+  --accent-dark: #9e3e12;
+  --gold: #d4943a;
+  --text: #1c1007;
+  --text-muted: #6b5040;
+  --text-light: #f5ede0;
+  --border: #d9cebf;
 }
 
 html {
@@ -33,23 +36,32 @@ a {
 }
 
 a:hover {
-  color: var(--text);
+  color: var(--accent-dark);
 }
 
 .section-container {
-  padding: 80px 24px;
-  max-width: 960px;
+  padding: 96px 40px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 h2.section-title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4rem;
+  font-size: clamp(2.4rem, 5vw, 3.2rem);
   font-weight: 800;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
   color: var(--text);
+  line-height: 1.1;
 }
 
 h2.section-title span {
   color: var(--accent);
+}
+
+h2.section-title.light {
+  color: var(--text-light);
+}
+
+h2.section-title.light span {
+  color: var(--gold);
 }

@@ -2,39 +2,71 @@ export default function Hero() {
   return (
     <section style={{
       minHeight: '100vh',
+      background: 'var(--hero-bg)',
       display: 'flex',
       alignItems: 'center',
-      padding: '0 24px',
-      maxWidth: '960px',
-      margin: '0 auto',
+      padding: '0 40px',
+      position: 'relative',
+      overflow: 'hidden',
     }}>
-      <div>
+      {/* Background accent circle */}
+      <div style={{
+        position: 'absolute',
+        top: '-10%',
+        right: '-5%',
+        width: '500px',
+        height: '500px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(196,84,31,0.18) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+
+      <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%', position: 'relative' }}>
         <p style={{
-          color: 'var(--accent)',
+          color: 'var(--gold)',
           fontWeight: 600,
-          letterSpacing: '0.1em',
+          letterSpacing: '0.15em',
           textTransform: 'uppercase',
-          fontSize: '0.85rem',
-          marginBottom: '16px',
-          fontFamily: "'Inter', sans-serif",
+          fontSize: '0.8rem',
+          marginBottom: '24px',
         }}>
           Hi, I&apos;m
         </p>
         <h1 style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: 'clamp(2.8rem, 8vw, 5.5rem)',
+          fontSize: 'clamp(3.5rem, 10vw, 7rem)',
           fontWeight: 800,
-          lineHeight: 1.05,
-          marginBottom: '24px',
-          color: 'var(--text)',
+          lineHeight: 1.0,
+          marginBottom: '12px',
+          color: '#f5ede0',
+          letterSpacing: '-0.02em',
         }}>
-          Jennifer Johnson
+          Jennifer
         </h1>
-        <p style={{
-          fontSize: 'clamp(1.05rem, 2.5vw, 1.3rem)',
-          color: 'var(--text-muted)',
-          maxWidth: '560px',
+        <h1 style={{
+          fontFamily: "'Playfair Display', Georgia, serif",
+          fontSize: 'clamp(3.5rem, 10vw, 7rem)',
+          fontWeight: 800,
+          lineHeight: 1.0,
           marginBottom: '40px',
+          color: 'var(--accent)',
+          letterSpacing: '-0.02em',
+        }}>
+          Johnson
+        </h1>
+
+        <div style={{
+          width: '60px',
+          height: '3px',
+          background: 'var(--gold)',
+          marginBottom: '32px',
+        }} />
+
+        <p style={{
+          fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+          color: 'rgba(245,237,224,0.65)',
+          maxWidth: '520px',
+          marginBottom: '48px',
           lineHeight: 1.8,
         }}>
           I build AI-powered tools that put the power of technology in the hands of non-technical teams —
@@ -46,30 +78,34 @@ export default function Hero() {
             style={{
               background: 'var(--accent)',
               color: '#fff',
-              padding: '12px 28px',
-              borderRadius: '6px',
-              fontWeight: 600,
-              fontSize: '0.95rem',
-              transition: 'opacity 0.2s',
+              padding: '14px 32px',
+              borderRadius: '4px',
+              fontWeight: 700,
+              fontSize: '0.9rem',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+              transition: 'background 0.2s',
             }}
-            onMouseEnter={e => e.target.style.opacity = '0.85'}
-            onMouseLeave={e => e.target.style.opacity = '1'}
+            onMouseEnter={e => e.target.style.background = 'var(--accent-dark)'}
+            onMouseLeave={e => e.target.style.background = 'var(--accent)'}
           >
             View Projects
           </a>
           <a
             href="#contact"
             style={{
-              border: '1.5px solid var(--border)',
-              color: 'var(--text)',
-              padding: '12px 28px',
-              borderRadius: '6px',
-              fontWeight: 600,
-              fontSize: '0.95rem',
+              border: '1.5px solid rgba(245,237,224,0.3)',
+              color: '#f5ede0',
+              padding: '14px 32px',
+              borderRadius: '4px',
+              fontWeight: 700,
+              fontSize: '0.9rem',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
               transition: 'border-color 0.2s',
             }}
-            onMouseEnter={e => e.target.style.borderColor = 'var(--accent)'}
-            onMouseLeave={e => e.target.style.borderColor = 'var(--border)'}
+            onMouseEnter={e => e.target.style.borderColor = 'rgba(245,237,224,0.8)'}
+            onMouseLeave={e => e.target.style.borderColor = 'rgba(245,237,224,0.3)'}
           >
             Get In Touch
           </a>
