@@ -1,27 +1,31 @@
 const projects = [
   {
-    title: 'AI Content Assistant',
+    title: 'Escalation Autopilot',
+    stat: '7 hrs → 30 min',
     description:
-      'A natural-language interface that lets marketing and ops teams generate, edit, and publish content without writing a single line of code. Reduced turnaround time by 60% across three internal teams.',
-    tags: ['React', 'OpenAI API', 'Node.js', 'Postgres'],
-    link: '#',
-    stat: '60% faster',
+      'Customer escalations were taking 7+ hours to resolve — spanning customer care all the way to engineering — often closing as WAI without a real fix. I automated internal documentation across Notion, HubSpot, and Linear using Claude Code MCPs, cutting resolution time to 30 minutes of customer support work and significantly reducing cost.',
+    tags: ['Claude Code', 'MCP', 'Notion', 'HubSpot', 'Linear'],
   },
   {
-    title: 'Prototype → Production App',
+    title: 'Product Intelligence Hub',
+    stat: 'Weeks reclaimed',
     description:
-      'Took a rough Notion-based workflow tool used by 5 people and rebuilt it as a full-stack web app now used by 200+. Includes role-based access, audit logs, and a self-serve onboarding flow.',
-    tags: ['React', 'Express', 'AWS', 'Stripe'],
-    link: '#',
-    stat: '5 → 200+ users',
+      'Consolidated five data sources — Pendo, Avoma, HubSpot, Slack, and Linear — into a single layer for product analysis. The team can now explore user feedback, deal blockers, and churn risk signals across every channel at once, saving weeks of manual discovery per research cycle.',
+    tags: ['Pendo', 'Avoma', 'HubSpot', 'Slack', 'Linear'],
   },
   {
-    title: 'Internal Knowledge Base Chatbot',
+    title: 'Customer Pulse Dashboard',
+    stat: 'C-suite visibility',
     description:
-      'Embedded a retrieval-augmented chatbot into a company intranet so non-technical staff could query internal docs in plain English. Cut support ticket volume by 40% in the first quarter.',
-    tags: ['LangChain', 'Python', 'Pinecone', 'Next.js'],
-    link: '#',
-    stat: '40% fewer tickets',
+      'Built an internal dashboard for the Chief Customer Officer to monitor agent tone, performance, and customer sentiment in real time based on support ticket data. Turned a reactive process into a proactive one — leadership now has a live read on customer health without waiting for reports.',
+    tags: ['Dashboard', 'Sentiment Analysis', 'Support Data'],
+  },
+  {
+    title: 'AI Fluency Program',
+    stat: 'Team-wide',
+    description:
+      'Taught my team how to use Claude as a real part of their daily workflow — from codebase review to feature speccing. The goal wasn\'t tool adoption for its own sake, but building genuine AI literacy so the team could move faster and think bigger without depending on engineering for every answer.',
+    tags: ['Claude', 'AI Enablement', 'Team Training', 'Feature Speccing'],
   },
 ]
 
@@ -30,6 +34,29 @@ export default function Projects() {
     <section id="projects" style={{ background: 'var(--surface)' }}>
       <div className="section-container">
         <h2 className="section-title">Selected <span>Projects</span></h2>
+
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '16px',
+          marginBottom: '32px',
+          marginTop: '-24px',
+        }}>
+          <span style={{
+            background: 'var(--hero-bg)',
+            color: 'var(--gold)',
+            padding: '6px 14px',
+            borderRadius: '3px',
+            fontSize: '0.75rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+          }}>
+            AI Enablement
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+        </div>
+
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
@@ -58,7 +85,7 @@ export default function Projects() {
             >
               <div style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '2rem',
+                fontSize: '1.75rem',
                 fontWeight: 800,
                 color: 'var(--accent)',
                 lineHeight: 1,
@@ -74,7 +101,7 @@ export default function Projects() {
               }}>
                 {project.title}
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.75, flex: 1 }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
                 {project.description}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
