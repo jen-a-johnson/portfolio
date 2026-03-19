@@ -1,3 +1,15 @@
+const personalProjects = [
+  {
+    title: 'Tally',
+    stat: 'Your wins, logged',
+    description:
+      'A task manager built for professionals who want a record of what they actually shipped. Complete a task and Claude automatically rewrites it as a polished achievement statement. Everything saves to Supabase. Generate a Win Recap at any time — ready to paste into a performance review, standup, or LinkedIn.',
+    tags: ['Next.js', 'Claude API', 'Supabase', 'Vercel'],
+    demo: 'https://tally-rouge.vercel.app/',
+    github: 'https://github.com/jen-a-johnson/tally',
+  },
+]
+
 const projects = [
   {
     title: 'Escalation Autopilot',
@@ -124,6 +136,102 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {/* Personal Projects */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', marginTop: '56px' }}>
+          <span style={{
+            background: 'var(--hero-bg)',
+            color: 'var(--gold)',
+            padding: '6px 14px',
+            borderRadius: '3px',
+            fontSize: '0.75rem',
+            fontWeight: 700,
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+          }}>
+            Personal Projects
+          </span>
+          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '28px' }}>
+          {personalProjects.map(project => (
+            <div key={project.title} style={{
+              background: 'var(--card)',
+              borderTop: '4px solid var(--accent)',
+              borderRadius: '4px',
+              padding: '32px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px',
+              boxShadow: '0 2px 16px rgba(28,16,7,0.07)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+            }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-4px)'
+                e.currentTarget.style.boxShadow = '0 8px 32px rgba(28,16,7,0.14)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 2px 16px rgba(28,16,7,0.07)'
+              }}
+            >
+              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent)', lineHeight: 1 }}>
+                {project.stat}
+              </div>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--text)', fontWeight: 700, fontSize: '1.2rem', lineHeight: 1.3 }}>
+                {project.title}
+              </h3>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
+                {project.description}
+              </p>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+                {project.tags.map(tag => (
+                  <span key={tag} style={{
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
+                    color: 'var(--text-muted)',
+                    padding: '4px 10px',
+                    borderRadius: '3px',
+                    fontSize: '0.75rem',
+                    fontWeight: 600,
+                    fontFamily: 'monospace',
+                    letterSpacing: '0.03em',
+                  }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{
+                  padding: '8px 18px',
+                  background: 'var(--accent)',
+                  color: '#fff',
+                  borderRadius: '3px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  letterSpacing: '0.04em',
+                }}>
+                  Live Demo →
+                </a>
+                <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
+                  padding: '8px 18px',
+                  border: '1.5px solid var(--border)',
+                  color: 'var(--text-muted)',
+                  borderRadius: '3px',
+                  fontSize: '0.8rem',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  letterSpacing: '0.04em',
+                }}>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
   )
