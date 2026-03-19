@@ -1,12 +1,11 @@
 const skills = [
   'AI / LLM Integration',
   'Prompt Engineering',
-  'React',
-  'Node.js',
-  'Python',
+  'Workflow Automation',
+  'Cross-tool Integration',
   'Product Strategy',
-  'Rapid Prototyping',
-  'Stakeholder Enablement',
+  'Team Enablement',
+  'Customer Insights',
 ]
 
 export default function About() {
@@ -22,13 +21,15 @@ export default function About() {
         }}>
           <div>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '1.1rem', lineHeight: 1.9 }}>
-              I specialize in bridging the gap between cutting-edge AI capabilities and the teams that need them most.
-              My work focuses on designing and shipping tools that non-technical users can actually rely on —
-              not just demos, but production-grade applications.
+              I&apos;m a Product Manager at <strong style={{ color: 'var(--text)' }}>Craftable</strong>, a SaaS B2B company,
+              where I do a lot more than manage a roadmap. I build systems. I find the friction in how teams work,
+              then design and automate my way out of it — connecting tools, integrating AI, and shipping solutions
+              that actually stick.
             </p>
             <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', lineHeight: 1.9 }}>
-              I&apos;ve taken multiple projects from zero-to-one: rough prototypes with real potential, shaped into
-              durable products with thoughtful UX, reliable infrastructure, and measurable impact.
+              I&apos;m also the person who makes sure the whole team can keep up. I teach non-technical colleagues
+              how to use AI as a real part of their workflow — not as a gimmick, but as leverage. I&apos;m curious,
+              I build fast, and I care about impact you can measure.
             </p>
           </div>
           <div>
