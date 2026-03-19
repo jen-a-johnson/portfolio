@@ -1,0 +1,54 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0d0d14;
+  --surface: #16162a;
+  --card: #1e1e35;
+  --accent: #7c6aff;
+  --accent-light: #a899ff;
+  --text: #e8e8f0;
+  --text-muted: #8888a8;
+  --border: #2a2a45;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+a {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+.section-container {
+  padding: 80px 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h2.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 48px;
+  color: var(--text);
+}
+
+h2.section-title span {
+  color: var(--accent);
+}
