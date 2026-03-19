@@ -14,7 +14,7 @@ export default function Contact() {
         </p>
         <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
           <a
-            href="mailto:jennifer@example.com"
+            href="mailto:jagfaris@icloud.com"
             style={{
               background: '#fff',
               color: 'var(--accent)',
@@ -29,7 +29,27 @@ export default function Contact() {
             onMouseEnter={e => e.target.style.opacity = '0.9'}
             onMouseLeave={e => e.target.style.opacity = '1'}
           >
-            Send Email
+            Email Me
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jennifer-a-johnson-f/"
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              border: '2px solid rgba(255,255,255,0.5)',
+              color: '#fff',
+              padding: '14px 36px',
+              borderRadius: '4px',
+              fontWeight: 700,
+              fontSize: '0.9rem',
+              letterSpacing: '0.05em',
+              textTransform: 'uppercase',
+              transition: 'border-color 0.2s',
+            }}
+            onMouseEnter={e => e.target.style.borderColor = '#fff'}
+            onMouseLeave={e => e.target.style.borderColor = 'rgba(255,255,255,0.5)'}
+          >
+            LinkedIn
           </a>
           <a
             href="https://github.com/jen-a-johnson"

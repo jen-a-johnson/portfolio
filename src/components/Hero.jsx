@@ -69,8 +69,8 @@ export default function Hero() {
           marginBottom: '48px',
           lineHeight: 1.8,
         }}>
-          I build AI-powered tools that put the power of technology in the hands of non-technical teams —
-          taking ideas from prototype to production.
+          Product Manager at Craftable. I build systems, automate the friction out of how teams work,
+          and make sure everyone — technical or not — can keep up.
         </p>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
           <a
