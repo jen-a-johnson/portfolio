@@ -20,13 +20,13 @@ export default function Nav() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      background: scrolled ? 'rgba(13,13,20,0.92)' : 'transparent',
+      background: scrolled ? 'rgba(247,243,236,0.92)' : 'transparent',
       backdropFilter: scrolled ? 'blur(12px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border)' : 'none',
       transition: 'all 0.3s ease',
     }}>
       <span style={{ fontWeight: 700, fontSize: '1.1rem', color: 'var(--accent)' }}>
-        JG
+        JJ
       </span>
       <div style={{ display: 'flex', gap: '32px' }}>
         {['About', 'Projects', 'Contact'].map(link => (

@@ -35,18 +35,29 @@ export default function Projects() {
           {projects.map(project => (
             <div key={project.title} style={{
               background: 'var(--card)',
-              border: '1px solid var(--border)',
-              borderRadius: '12px',
+              border: '1.5px solid var(--border)',
+              borderRadius: '10px',
               padding: '28px',
               display: 'flex',
               flexDirection: 'column',
               gap: '16px',
-              transition: 'border-color 0.2s',
+              transition: 'border-color 0.2s, box-shadow 0.2s',
             }}
-              onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--accent)'}
-              onMouseLeave={e => e.currentTarget.style.borderColor = 'var(--border)'}
+              onMouseEnter={e => {
+                e.currentTarget.style.borderColor = 'var(--accent)'
+                e.currentTarget.style.boxShadow = '0 4px 24px rgba(184,92,56,0.1)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.borderColor = 'var(--border)'
+                e.currentTarget.style.boxShadow = 'none'
+              }}
             >
-              <h3 style={{ color: 'var(--text)', fontWeight: 700, fontSize: '1.1rem' }}>
+              <h3 style={{
+                fontFamily: "'Playfair Display', Georgia, serif",
+                color: 'var(--text)',
+                fontWeight: 700,
+                fontSize: '1.15rem',
+              }}>
                 {project.title}
               </h3>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: 1.7, flex: 1 }}>
@@ -56,7 +67,7 @@ export default function Projects() {
                 {project.tags.map(tag => (
                   <span key={tag} style={{
                     background: 'var(--surface)',
-                    color: 'var(--accent-light)',
+                    color: 'var(--accent)',
                     padding: '4px 10px',
                     borderRadius: '4px',
                     fontSize: '0.78rem',

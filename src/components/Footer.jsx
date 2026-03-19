@@ -7,7 +7,7 @@ export default function Footer() {
       color: 'var(--text-muted)',
       fontSize: '0.85rem',
     }}>
-      <p>Jennifer Garza &mdash; {new Date().getFullYear()}</p>
+      <p>Jennifer Johnson &mdash; {new Date().getFullYear()}</p>
     </footer>
   )
 }

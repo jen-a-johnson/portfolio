@@ -11,7 +11,7 @@ const skills = [
 
 export default function About() {
   return (
-    <section id="about">
+    <section id="about" style={{ background: 'var(--surface)' }}>
       <div className="section-container">
         <h2 className="section-title">About <span>Me</span></h2>
         <div style={{
@@ -32,17 +32,17 @@ export default function About() {
             </p>
           </div>
           <div>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '16px' }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: '16px' }}>
               Skills &amp; Focus Areas
             </p>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {skills.map(skill => (
                 <span key={skill} style={{
-                  background: 'var(--card)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--accent-light)',
+                  background: 'var(--bg)',
+                  border: '1.5px solid var(--border)',
+                  color: 'var(--accent)',
                   padding: '6px 14px',
-                  borderRadius: '20px',
+                  borderRadius: '4px',
                   fontSize: '0.85rem',
                   fontWeight: 500,
                 }}>

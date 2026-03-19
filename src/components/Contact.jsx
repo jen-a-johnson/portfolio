@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact">
+    <section id="contact" style={{ background: 'var(--surface)' }}>
       <div className="section-container" style={{ textAlign: 'center' }}>
         <h2 className="section-title">Get In <span>Touch</span></h2>
         <p style={{
@@ -8,7 +8,7 @@ export default function Contact() {
           fontSize: '1.05rem',
           maxWidth: '480px',
           margin: '0 auto 40px',
-          lineHeight: 1.7,
+          lineHeight: 1.8,
         }}>
           Interested in working together or just want to talk AI and product? My inbox is open.
         </p>
@@ -19,7 +19,7 @@ export default function Contact() {
               background: 'var(--accent)',
               color: '#fff',
               padding: '12px 28px',
-              borderRadius: '8px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '0.95rem',
               transition: 'opacity 0.2s',
@@ -34,10 +34,10 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
             style={{
-              border: '1px solid var(--border)',
+              border: '1.5px solid var(--border)',
               color: 'var(--text)',
               padding: '12px 28px',
-              borderRadius: '8px',
+              borderRadius: '6px',
               fontWeight: 600,
               fontSize: '0.95rem',
               transition: 'border-color 0.2s',

@@ -5,14 +5,14 @@
 }
 
 :root {
-  --bg: #0d0d14;
-  --surface: #16162a;
-  --card: #1e1e35;
-  --accent: #7c6aff;
-  --accent-light: #a899ff;
-  --text: #e8e8f0;
-  --text-muted: #8888a8;
-  --border: #2a2a45;
+  --bg: #f7f3ec;
+  --surface: #ede8df;
+  --card: #ffffff;
+  --accent: #b85c38;
+  --accent-light: #c97a56;
+  --text: #2a1f14;
+  --text-muted: #7a6555;
+  --border: #d9d2c5;
 }
 
 html {
@@ -28,7 +28,7 @@ body {
 }
 
 a {
-  color: var(--accent-light);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -43,8 +43,9 @@ a:hover {
 }
 
 h2.section-title {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 800;
   margin-bottom: 48px;
   color: var(--text);
 }
