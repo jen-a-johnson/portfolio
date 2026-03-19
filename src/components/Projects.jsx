@@ -43,9 +43,9 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ background: 'var(--surface)' }}>
+    <section id="projects" style={{ background: 'var(--green)' }}>
       <div className="section-container">
-        <h2 className="section-title">Selected <span>Projects</span></h2>
+        <h2 className="section-title" style={{ color: '#f5ede0' }}>Selected <span style={{ color: 'var(--yellow)' }}>Projects</span></h2>
 
         <div style={{
           display: 'flex',
@@ -55,75 +55,75 @@ export default function Projects() {
           marginTop: '-24px',
         }}>
           <span style={{
-            background: 'var(--hero-bg)',
-            color: 'var(--gold)',
-            padding: '6px 14px',
-            borderRadius: '3px',
-            fontSize: '0.75rem',
-            fontWeight: 700,
+            background: 'var(--yellow)',
+            color: 'var(--hero-bg)',
+            padding: '6px 16px',
+            borderRadius: '99px',
+            fontSize: '0.72rem',
+            fontWeight: 800,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
           }}>
             AI Enablement
           </span>
-          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+          <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
         </div>
 
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-          gap: '28px',
+          gap: '24px',
         }}>
           {projects.map(project => (
             <div key={project.title} style={{
-              background: 'var(--card)',
-              borderTop: '4px solid var(--accent)',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
+              borderTop: '4px solid var(--yellow)',
               borderRadius: '4px',
               padding: '32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '16px',
-              boxShadow: '0 2px 16px rgba(28,16,7,0.07)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
+              gap: '14px',
+              transition: 'transform 0.2s, background 0.2s',
             }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)'
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(28,16,7,0.14)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 2px 16px rgba(28,16,7,0.07)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
               }}
             >
               <div style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
                 fontSize: '1.75rem',
-                fontWeight: 800,
-                color: 'var(--accent)',
+                fontWeight: 900,
+                color: 'var(--yellow)',
                 lineHeight: 1,
               }}>
                 {project.stat}
               </div>
               <h3 style={{
                 fontFamily: "'Playfair Display', Georgia, serif",
-                color: 'var(--text)',
+                color: '#f5ede0',
                 fontWeight: 700,
                 fontSize: '1.2rem',
                 lineHeight: 1.3,
               }}>
                 {project.title}
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
+              <p style={{ color: 'rgba(245,237,224,0.7)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
                 {project.description}
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                 {project.tags.map(tag => (
                   <span key={tag} style={{
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    color: 'var(--text-muted)',
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: 'rgba(245,237,224,0.8)',
                     padding: '4px 10px',
-                    borderRadius: '3px',
+                    borderRadius: '99px',
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     fontFamily: 'monospace',
@@ -140,59 +140,59 @@ export default function Projects() {
         {/* Personal Projects */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', marginTop: '56px' }}>
           <span style={{
-            background: 'var(--hero-bg)',
-            color: 'var(--gold)',
-            padding: '6px 14px',
-            borderRadius: '3px',
-            fontSize: '0.75rem',
-            fontWeight: 700,
+            background: 'var(--accent)',
+            color: '#fff',
+            padding: '6px 16px',
+            borderRadius: '99px',
+            fontSize: '0.72rem',
+            fontWeight: 800,
             letterSpacing: '0.12em',
             textTransform: 'uppercase',
           }}>
             Personal Projects
           </span>
-          <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+          <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '28px' }}>
           {personalProjects.map(project => (
             <div key={project.title} style={{
-              background: 'var(--card)',
+              background: 'rgba(255,255,255,0.06)',
+              border: '1px solid rgba(255,255,255,0.12)',
               borderTop: '4px solid var(--accent)',
               borderRadius: '4px',
               padding: '32px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '16px',
-              boxShadow: '0 2px 16px rgba(28,16,7,0.07)',
-              transition: 'transform 0.2s, box-shadow 0.2s',
+              gap: '14px',
+              transition: 'transform 0.2s, background 0.2s',
             }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-4px)'
-                e.currentTarget.style.boxShadow = '0 8px 32px rgba(28,16,7,0.14)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 2px 16px rgba(28,16,7,0.07)'
+                e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
               }}
             >
-              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.75rem', fontWeight: 800, color: 'var(--accent)', lineHeight: 1 }}>
+              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.75rem', fontWeight: 900, color: 'var(--accent)', lineHeight: 1 }}>
                 {project.stat}
               </div>
-              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: 'var(--text)', fontWeight: 700, fontSize: '1.2rem', lineHeight: 1.3 }}>
+              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#f5ede0', fontWeight: 700, fontSize: '1.2rem', lineHeight: 1.3 }}>
                 {project.title}
               </h3>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
+              <p style={{ color: 'rgba(245,237,224,0.7)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
                 {project.description}
               </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '8px' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' }}>
                 {project.tags.map(tag => (
                   <span key={tag} style={{
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    color: 'var(--text-muted)',
+                    background: 'rgba(255,255,255,0.08)',
+                    border: '1px solid rgba(255,255,255,0.15)',
+                    color: 'rgba(245,237,224,0.8)',
                     padding: '4px 10px',
-                    borderRadius: '3px',
+                    borderRadius: '99px',
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     fontFamily: 'monospace',
@@ -204,26 +204,28 @@ export default function Projects() {
               </div>
               <div style={{ display: 'flex', gap: '12px' }}>
                 <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{
-                  padding: '8px 18px',
+                  padding: '10px 22px',
                   background: 'var(--accent)',
                   color: '#fff',
-                  borderRadius: '3px',
+                  borderRadius: '4px',
                   fontSize: '0.8rem',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   textDecoration: 'none',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
                 }}>
                   Live Demo →
                 </a>
                 <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
-                  padding: '8px 18px',
-                  border: '1.5px solid var(--border)',
-                  color: 'var(--text-muted)',
-                  borderRadius: '3px',
+                  padding: '10px 22px',
+                  border: '1.5px solid rgba(255,255,255,0.25)',
+                  color: 'rgba(245,237,224,0.8)',
+                  borderRadius: '4px',
                   fontSize: '0.8rem',
-                  fontWeight: 700,
+                  fontWeight: 800,
                   textDecoration: 'none',
-                  letterSpacing: '0.04em',
+                  letterSpacing: '0.06em',
+                  textTransform: 'uppercase',
                 }}>
                   GitHub
                 </a>

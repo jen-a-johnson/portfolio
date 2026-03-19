@@ -27,10 +27,11 @@ export default function Nav() {
     }}>
       <span style={{
         fontFamily: "'Playfair Display', Georgia, serif",
-        fontWeight: 800,
-        fontSize: '1.2rem',
-        color: scrolled ? 'var(--accent)' : '#f5ede0',
+        fontWeight: 900,
+        fontSize: '1.3rem',
+        color: scrolled ? 'var(--accent)' : 'var(--yellow)',
         transition: 'color 0.3s',
+        letterSpacing: '-0.02em',
       }}>
         JJ
       </span>

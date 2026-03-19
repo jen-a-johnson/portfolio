@@ -9,103 +9,137 @@ export default function Hero() {
       position: 'relative',
       overflow: 'hidden',
     }}>
-      {/* Background accent circle */}
+      {/* Big decorative circle */}
       <div style={{
         position: 'absolute',
-        top: '-10%',
-        right: '-5%',
-        width: '500px',
-        height: '500px',
+        top: '-120px',
+        right: '-120px',
+        width: '600px',
+        height: '600px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(196,84,31,0.18) 0%, transparent 70%)',
+        border: '2px solid rgba(232,180,53,0.12)',
         pointerEvents: 'none',
+      }} />
+      <div style={{
+        position: 'absolute',
+        top: '-60px',
+        right: '-60px',
+        width: '400px',
+        height: '400px',
+        borderRadius: '50%',
+        border: '2px solid rgba(196,84,31,0.15)',
+        pointerEvents: 'none',
+      }} />
+      {/* Yellow accent block */}
+      <div style={{
+        position: 'absolute',
+        bottom: '0',
+        left: '0',
+        width: '6px',
+        height: '40%',
+        background: 'var(--yellow)',
       }} />
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%', position: 'relative' }}>
         <p style={{
-          color: 'var(--gold)',
-          fontWeight: 600,
-          letterSpacing: '0.15em',
+          color: 'var(--yellow)',
+          fontWeight: 700,
+          letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          fontSize: '0.8rem',
-          marginBottom: '24px',
+          fontSize: '0.75rem',
+          marginBottom: '20px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
         }}>
+          <span style={{ display: 'inline-block', width: '32px', height: '2px', background: 'var(--yellow)' }} />
           Hi, I&apos;m
         </p>
         <h1 style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: 'clamp(3.5rem, 10vw, 7rem)',
-          fontWeight: 800,
-          lineHeight: 1.0,
-          marginBottom: '12px',
+          fontSize: 'clamp(4rem, 12vw, 8.5rem)',
+          fontWeight: 900,
+          lineHeight: 0.95,
+          marginBottom: '8px',
           color: '#f5ede0',
-          letterSpacing: '-0.02em',
+          letterSpacing: '-0.03em',
         }}>
           Jennifer
         </h1>
         <h1 style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: 'clamp(3.5rem, 10vw, 7rem)',
-          fontWeight: 800,
-          lineHeight: 1.0,
-          marginBottom: '40px',
-          color: 'var(--accent)',
-          letterSpacing: '-0.02em',
+          fontSize: 'clamp(4rem, 12vw, 8.5rem)',
+          fontWeight: 900,
+          lineHeight: 0.95,
+          marginBottom: '36px',
+          WebkitTextStroke: '2px var(--accent)',
+          color: 'transparent',
+          letterSpacing: '-0.03em',
         }}>
           Johnson
         </h1>
 
+        {/* Role pill */}
         <div style={{
-          width: '60px',
-          height: '3px',
-          background: 'var(--gold)',
-          marginBottom: '32px',
-        }} />
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '10px',
+          background: 'var(--accent)',
+          color: '#fff',
+          padding: '8px 20px',
+          borderRadius: '99px',
+          fontSize: '0.82rem',
+          fontWeight: 700,
+          letterSpacing: '0.08em',
+          textTransform: 'uppercase',
+          marginBottom: '28px',
+        }}>
+          <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0 }} />
+          Product Manager · SaaS B2B
+        </div>
 
         <p style={{
-          fontSize: 'clamp(1.05rem, 2vw, 1.25rem)',
+          fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
           color: 'rgba(245,237,224,0.65)',
-          maxWidth: '520px',
+          maxWidth: '500px',
           marginBottom: '48px',
           lineHeight: 1.8,
+          display: 'block',
         }}>
-          Product Manager at Craftable. I build systems, automate the friction out of how teams work,
+          I build systems, automate the friction out of how teams work,
           and make sure everyone — technical or not — can keep up.
         </p>
-        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-          <a
-            href="#projects"
-            style={{
-              background: 'var(--accent)',
-              color: '#fff',
-              padding: '14px 32px',
-              borderRadius: '4px',
-              fontWeight: 700,
-              fontSize: '0.9rem',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              transition: 'background 0.2s',
-            }}
-            onMouseEnter={e => e.target.style.background = 'var(--accent-dark)'}
-            onMouseLeave={e => e.target.style.background = 'var(--accent)'}
+
+        <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+          <a href="#projects" style={{
+            background: 'var(--yellow)',
+            color: 'var(--hero-bg)',
+            padding: '15px 36px',
+            borderRadius: '4px',
+            fontWeight: 800,
+            fontSize: '0.85rem',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            transition: 'opacity 0.2s',
+          }}
+            onMouseEnter={e => e.target.style.opacity = '0.85'}
+            onMouseLeave={e => e.target.style.opacity = '1'}
           >
             View Projects
           </a>
-          <a
-            href="#contact"
-            style={{
-              border: '1.5px solid rgba(245,237,224,0.3)',
-              color: '#f5ede0',
-              padding: '14px 32px',
-              borderRadius: '4px',
-              fontWeight: 700,
-              fontSize: '0.9rem',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              transition: 'border-color 0.2s',
-            }}
-            onMouseEnter={e => e.target.style.borderColor = 'rgba(245,237,224,0.8)'}
-            onMouseLeave={e => e.target.style.borderColor = 'rgba(245,237,224,0.3)'}
+          <a href="#contact" style={{
+            border: '2px solid var(--accent)',
+            color: 'var(--accent)',
+            padding: '15px 36px',
+            borderRadius: '4px',
+            fontWeight: 800,
+            fontSize: '0.85rem',
+            letterSpacing: '0.08em',
+            textTransform: 'uppercase',
+            transition: 'all 0.2s',
+          }}
+            onMouseEnter={e => { e.target.style.background = 'var(--accent)'; e.target.style.color = '#fff' }}
+            onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--accent)' }}
           >
             Get In Touch
           </a>
