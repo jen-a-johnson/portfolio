@@ -8,9 +8,9 @@ const projects = [
   },
   {
     title: 'Product Intelligence Hub',
-    stat: 'Weeks reclaimed',
+    stat: '6 days → 2 hrs',
     description:
-      'Consolidated five data sources — Pendo, Avoma, HubSpot, Slack, and Linear — into a single layer for product analysis. The team can now explore user feedback, deal blockers, and churn risk signals across every channel at once, saving weeks of manual discovery per research cycle.',
+      'Discovery used to mean hours of Avoma call reviews, Pendo replay sessions, days waiting on internal teams to surface what they remembered, and more days coordinating customer calls — before a direction could even be decided. I consolidated Pendo, Avoma, HubSpot, Slack, and Linear into a single analysis layer. Now the full cycle takes under two hours.',
     tags: ['Pendo', 'Avoma', 'HubSpot', 'Slack', 'Linear'],
   },
   {
