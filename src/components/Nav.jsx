@@ -4,7 +4,7 @@ export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60)
+    const onScroll = () => setScrolled(window.scrollY > 20)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -16,40 +16,26 @@ export default function Nav() {
       left: 0,
       right: 0,
       zIndex: 100,
-      padding: '18px 40px',
+      padding: '16px 40px',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      background: scrolled ? 'rgba(250,245,238,0.95)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(12px)' : 'none',
-      borderBottom: scrolled ? '1px solid var(--border)' : 'none',
+      background: scrolled ? 'rgba(255,255,255,0.85)' : 'transparent',
+      backdropFilter: scrolled ? 'saturate(180%) blur(12px)' : 'none',
+      borderBottom: `1px solid ${scrolled ? 'var(--border)' : 'transparent'}`,
       transition: 'all 0.3s ease',
     }}>
-      <span style={{
-        fontFamily: "'Playfair Display', Georgia, serif",
-        fontWeight: 900,
-        fontSize: '1.3rem',
-        color: scrolled ? 'var(--accent)' : 'var(--text-light)',
-        transition: 'color 0.3s',
-        letterSpacing: '-0.02em',
-      }}>
-        JJ
-      </span>
-      <div style={{ display: 'flex', gap: '36px' }}>
+      <a href="#" style={{ fontWeight: 600, fontSize: '0.95rem', letterSpacing: '-0.01em' }}>
+        Jennifer Johnson
+      </a>
+      <div style={{ display: 'flex', gap: '28px' }}>
         {['About', 'Projects', 'Contact'].map(link => (
           <a
             key={link}
             href={`#${link.toLowerCase()}`}
-            style={{
-              color: scrolled ? 'var(--text-muted)' : 'rgba(245,237,224,0.75)',
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              transition: 'color 0.2s',
-            }}
-            onMouseEnter={e => e.target.style.color = scrolled ? 'var(--text)' : '#f5ede0'}
-            onMouseLeave={e => e.target.style.color = scrolled ? 'var(--text-muted)' : 'rgba(245,237,224,0.75)'}
+            style={{ color: 'var(--text-muted)', fontSize: '0.88rem', fontWeight: 500, transition: 'color 0.2s' }}
+            onMouseEnter={e => e.target.style.color = 'var(--text)'}
+            onMouseLeave={e => e.target.style.color = 'var(--text-muted)'}
           >
             {link}
           </a>

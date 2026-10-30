@@ -60,140 +60,86 @@ const projects = [
   },
 ]
 
-function GroupLabel({ children, first }) {
+function GroupLabel({ children }) {
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '16px',
-      marginBottom: '28px',
-      marginTop: first ? '-24px' : '72px',
+    <h3 style={{
+      fontSize: '0.95rem',
+      fontWeight: 600,
+      color: 'var(--text)',
+      paddingBottom: '14px',
+      marginBottom: '24px',
+      borderBottom: '1px solid var(--border)',
     }}>
-      <span style={{
-        color: 'var(--accent)',
-        fontSize: '0.75rem',
-        fontWeight: 700,
-        letterSpacing: '0.16em',
-        textTransform: 'uppercase',
-      }}>
-        {children}
-      </span>
-      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
-    </div>
+      {children}
+    </h3>
   )
 }
 
 function ProjectCard({ project }) {
   return (
-    <div style={{
-      background: 'var(--card)',
-      border: '1px solid var(--border)',
-      borderRadius: '10px',
-      padding: '32px',
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-      gap: '14px',
-      boxShadow: '0 1px 2px rgba(26,21,18,0.04)',
-      transition: 'transform 0.2s, box-shadow 0.2s',
-    }}
-      onMouseEnter={e => {
-        e.currentTarget.style.transform = 'translateY(-4px)'
-        e.currentTarget.style.boxShadow = '0 14px 32px rgba(26,21,18,0.08)'
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.transform = 'translateY(0)'
-        e.currentTarget.style.boxShadow = '0 1px 2px rgba(26,21,18,0.04)'
-      }}
-    >
+    <div className="card">
       <div style={{
-        fontFamily: "'Playfair Display', Georgia, serif",
-        fontSize: '1.6rem',
-        fontWeight: 800,
-        color: 'var(--accent)',
-        lineHeight: 1.1,
+        fontSize: '1.5rem',
+        fontWeight: 600,
+        letterSpacing: '-0.03em',
+        lineHeight: 1.2,
+        marginBottom: '6px',
       }}>
         {project.stat}
       </div>
-      <h3 style={{
-        color: 'var(--text)',
-        fontWeight: 600,
-        fontSize: '1.05rem',
-        lineHeight: 1.3,
-      }}>
+      <h4 style={{ fontSize: '0.92rem', fontWeight: 500, color: 'var(--text-subtle)', marginBottom: '16px' }}>
         {project.title}
-      </h3>
-      <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
+      </h4>
+      <p style={{ color: 'var(--text-muted)', fontSize: '0.92rem', lineHeight: 1.7, marginBottom: '20px' }}>
         {project.description}
       </p>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-        {project.tags.map(tag => (
-          <span key={tag} style={{
-            background: 'var(--surface)',
-            color: 'var(--text-muted)',
-            padding: '4px 10px',
-            borderRadius: '99px',
-            fontSize: '0.75rem',
-            fontWeight: 500,
-          }}>
-            {tag}
-          </span>
-        ))}
-      </div>
-      {project.demo && (
-        <div style={{ display: 'flex', gap: '12px', marginTop: '6px' }}>
-          <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{
-            padding: '10px 20px',
-            background: 'var(--accent)',
-            color: '#fff',
-            borderRadius: '6px',
-            fontSize: '0.8rem',
-            fontWeight: 600,
-            letterSpacing: '0.04em',
-          }}>
-            Live Demo →
-          </a>
-          {project.github && (
-            <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
-              padding: '10px 20px',
-              border: '1px solid var(--border)',
-              color: 'var(--text)',
-              borderRadius: '6px',
-              fontSize: '0.8rem',
-              fontWeight: 600,
-              letterSpacing: '0.04em',
-            }}>
-              GitHub
+      {/* marginTop auto pins tags and buttons to the bottom so they line up across cards */}
+      <div style={{ marginTop: 'auto' }}>
+        <p style={{ fontSize: '0.78rem', color: 'var(--text-subtle)', lineHeight: 1.6 }}>
+          {project.tags.join(' · ')}
+        </p>
+        {project.demo && (
+          <div style={{ display: 'flex', gap: '8px', marginTop: '20px' }}>
+            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-primary">
+              Live demo <span className="arrow">→</span>
             </a>
-          )}
-        </div>
-      )}
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn btn-sm btn-secondary">
+                GitHub
+              </a>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   )
 }
 
+const grid = { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }
+
 export default function Projects() {
   return (
-    <section id="projects" style={{ background: 'var(--surface)' }}>
+    <section id="projects" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className="section-container">
         <Reveal>
-          <h2 className="section-title">Selected <span>Projects</span></h2>
-          <GroupLabel first>AI Enablement</GroupLabel>
+          <p className="eyebrow">Work</p>
+          <h2 className="section-title">Selected projects</h2>
+          <GroupLabel>AI enablement</GroupLabel>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '24px' }}>
+        <div style={grid}>
           {projects.map((project, i) => (
-            <Reveal key={project.title} delay={(i % 2) * 120}>
+            <Reveal key={project.title} delay={(i % 2) * 100}>
               <ProjectCard project={project} />
             </Reveal>
           ))}
         </div>
 
-        <Reveal>
-          <GroupLabel>Personal Projects</GroupLabel>
+        <Reveal style={{ marginTop: '72px' }}>
+          <GroupLabel>Personal projects</GroupLabel>
         </Reveal>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '24px' }}>
+        <div style={grid}>
           {personalProjects.map((project, i) => (
-            <Reveal key={project.title} delay={i * 120}>
+            <Reveal key={project.title} delay={i * 100}>
               <ProjectCard project={project} />
             </Reveal>
           ))}

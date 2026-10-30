@@ -5,18 +5,14 @@
 }
 
 :root {
-  --bg: #faf7f2;
-  --surface: #f2ece4;
+  --bg: #ffffff;
+  --surface: #f7f7f8;
   --card: #ffffff;
-  --hero-bg: #1a1512;
-  --accent: #b8532a;
-  --accent-dark: #93401f;
-  --accent-light: #e08a62;
-  --accent-soft: #f6e6dc;
-  --text: #1a1512;
-  --text-muted: #6b5d52;
-  --text-light: #f5efe6;
-  --border: #e4dacd;
+  --text: #111113;
+  --text-muted: #5f6068;
+  --text-subtle: #8b8c93;
+  --border: #e6e6e9;
+  --border-strong: #d4d4d8;
 }
 
 html {
@@ -26,47 +22,113 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
   line-height: 1.6;
   margin: 0;
 }
 
 a {
-  color: var(--accent);
+  color: var(--text);
   text-decoration: none;
 }
 
-a:hover {
-  color: var(--accent-dark);
-}
-
 .section-container {
-  padding: 96px 40px;
-  max-width: 1000px;
+  padding: 112px 40px;
+  max-width: 1040px;
   margin: 0 auto;
 }
 
+.eyebrow {
+  color: var(--text-subtle);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+}
+
 h2.section-title {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2.4rem, 5vw, 3.2rem);
-  font-weight: 800;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   margin-bottom: 56px;
   color: var(--text);
-  line-height: 1.1;
 }
 
-h2.section-title span {
-  color: var(--accent);
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-h2.section-title.light {
-  color: var(--text-light);
+.btn-sm {
+  height: 36px;
+  padding: 0 16px;
+  font-size: 0.82rem;
+}
+
+.btn-primary {
+  background: var(--text);
+  color: #fff;
+  border: 1px solid var(--text);
+}
+
+.btn-primary:hover {
+  background: #2c2c30;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text);
+}
+
+.btn .arrow {
+  transition: transform 0.2s;
+}
+
+.btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Project cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 8px 24px rgba(17, 17, 19, 0.06);
+  transform: translateY(-2px);
 }
 
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(16px);
   transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -77,32 +139,13 @@ h2.section-title.light {
 
 /* Hero entrance */
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(28px); }
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: none; }
-}
-
-@keyframes draw-line {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
-}
-
-@keyframes drift {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-18px, 14px); }
 }
 
 .hero-in {
   opacity: 0;
-  animation: fade-up 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-}
-
-.hero-line {
-  transform-origin: left;
-  animation: draw-line 0.8s 0.2s ease-out both;
-}
-
-.hero-drift {
-  animation: drift 14s ease-in-out infinite;
+  animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -113,9 +156,5 @@ h2.section-title.light {
     transition: none;
     animation: none;
   }
-  .hero-line, .hero-drift { animation: none; }
-}
-
-h2.section-title.light span {
-  color: var(--accent-light);
+  .card, .card:hover { transform: none; }
 }
