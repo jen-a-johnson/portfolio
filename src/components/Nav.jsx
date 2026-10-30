@@ -29,7 +29,7 @@ export default function Nav() {
         fontFamily: "'Playfair Display', Georgia, serif",
         fontWeight: 900,
         fontSize: '1.3rem',
-        color: scrolled ? 'var(--accent)' : 'var(--yellow)',
+        color: scrolled ? 'var(--accent)' : 'var(--text-light)',
         transition: 'color 0.3s',
         letterSpacing: '-0.02em',
       }}>

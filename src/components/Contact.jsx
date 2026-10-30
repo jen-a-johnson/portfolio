@@ -1,8 +1,8 @@
 export default function Contact() {
   return (
-    <section id="contact" style={{ background: 'var(--hero-bg)', borderTop: '6px solid var(--yellow)' }}>
+    <section id="contact" style={{ background: 'var(--hero-bg)', borderTop: '1px solid rgba(245,239,230,0.08)' }}>
       <div className="section-container" style={{ textAlign: 'center' }}>
-        <h2 className="section-title light">Get In <span style={{ color: 'var(--yellow)' }}>Touch</span></h2>
+        <h2 className="section-title light">Get In <span>Touch</span></h2>
         <p style={{
           color: 'rgba(245,237,224,0.65)',
           fontSize: '1.15rem',
@@ -16,10 +16,10 @@ export default function Contact() {
           <a
             href="mailto:jagfaris@icloud.com"
             style={{
-              background: 'var(--yellow)',
-              color: 'var(--hero-bg)',
+              background: 'var(--accent)',
+              color: '#fff',
               padding: '15px 36px',
-              borderRadius: '4px',
+              borderRadius: '6px',
               fontWeight: 800,
               fontSize: '0.85rem',
               letterSpacing: '0.08em',

@@ -3,10 +3,18 @@ const personalProjects = [
     title: 'My Mortgage Buddy',
     stat: 'Loan options, side by side',
     description:
-      'A closing-cost tool built for mortgage loan officers who need to quote fast and explain clearly. Build a fee sheet in minutes, then switch to presentation mode for a clean, side-by-side comparison of loan options — the view a loan officer actually walks a borrower through. Everything saves to Supabase.',
-    tags: ['SvelteKit', 'Tailwind CSS', 'shadcn-svelte', 'Supabase'],
+      'A closing-cost tool built for mortgage loan officers who need to quote fast and explain clearly. Build a fee sheet in minutes, then switch to presentation mode for a clean, side-by-side comparison of loan options — the view a loan officer actually walks a borrower through.',
+    tags: ['Svelte', 'JavaScript', 'Hono', 'Neon Postgres'],
     demo: 'https://mymortgagebuddyapp.com/',
     github: 'https://github.com/jen-a-johnson/mymortgagebuddy',
+  },
+  {
+    title: 'Signl',
+    stat: 'Market intel, on schedule',
+    description:
+      'Competitor and market intelligence delivered to your inbox. Tell Signl your role, industry, and the competitors you care about — it searches the web and Claude writes a personalized brief, sent daily, weekly, or monthly on the schedule you choose.',
+    tags: ['Next.js', 'Claude API', 'Supabase', 'Resend', 'Vercel'],
+    demo: 'https://www.mysignls.com/',
   },
   {
     title: 'Tally',
@@ -50,199 +58,132 @@ const projects = [
   },
 ]
 
-export default function Projects() {
+function GroupLabel({ children, first }) {
   return (
-    <section id="projects" style={{ background: 'var(--green)' }}>
-      <div className="section-container">
-        <h2 className="section-title" style={{ color: '#f5ede0' }}>Selected <span style={{ color: 'var(--yellow)' }}>Projects</span></h2>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '16px',
+      marginBottom: '28px',
+      marginTop: first ? '-24px' : '72px',
+    }}>
+      <span style={{
+        color: 'var(--accent)',
+        fontSize: '0.75rem',
+        fontWeight: 700,
+        letterSpacing: '0.16em',
+        textTransform: 'uppercase',
+      }}>
+        {children}
+      </span>
+      <div style={{ flex: 1, height: '1px', background: 'var(--border)' }} />
+    </div>
+  )
+}
 
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '16px',
-          marginBottom: '32px',
-          marginTop: '-24px',
-        }}>
-          <span style={{
-            background: 'var(--yellow)',
-            color: 'var(--hero-bg)',
-            padding: '6px 16px',
+function ProjectCard({ project }) {
+  return (
+    <div style={{
+      background: 'var(--card)',
+      border: '1px solid var(--border)',
+      borderRadius: '10px',
+      padding: '32px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '14px',
+      boxShadow: '0 1px 2px rgba(26,21,18,0.04)',
+      transition: 'transform 0.2s, box-shadow 0.2s',
+    }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-4px)'
+        e.currentTarget.style.boxShadow = '0 14px 32px rgba(26,21,18,0.08)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0)'
+        e.currentTarget.style.boxShadow = '0 1px 2px rgba(26,21,18,0.04)'
+      }}
+    >
+      <div style={{
+        fontFamily: "'Playfair Display', Georgia, serif",
+        fontSize: '1.6rem',
+        fontWeight: 800,
+        color: 'var(--accent)',
+        lineHeight: 1.1,
+      }}>
+        {project.stat}
+      </div>
+      <h3 style={{
+        color: 'var(--text)',
+        fontWeight: 600,
+        fontSize: '1.05rem',
+        lineHeight: 1.3,
+      }}>
+        {project.title}
+      </h3>
+      <p style={{ color: 'var(--text-muted)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
+        {project.description}
+      </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+        {project.tags.map(tag => (
+          <span key={tag} style={{
+            background: 'var(--surface)',
+            color: 'var(--text-muted)',
+            padding: '4px 10px',
             borderRadius: '99px',
-            fontSize: '0.72rem',
-            fontWeight: 800,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
+            fontSize: '0.75rem',
+            fontWeight: 500,
           }}>
-            AI Enablement
+            {tag}
           </span>
-          <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
-        </div>
-
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-          gap: '24px',
-        }}>
-          {projects.map(project => (
-            <div key={project.title} style={{
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.12)',
-              borderTop: '4px solid var(--yellow)',
-              borderRadius: '4px',
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.2s, background 0.2s',
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-              }}
-            >
-              <div style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '1.75rem',
-                fontWeight: 900,
-                color: 'var(--yellow)',
-                lineHeight: 1,
-              }}>
-                {project.stat}
-              </div>
-              <h3 style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                color: '#f5ede0',
-                fontWeight: 700,
-                fontSize: '1.2rem',
-                lineHeight: 1.3,
-              }}>
-                {project.title}
-              </h3>
-              <p style={{ color: 'rgba(245,237,224,0.7)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
-                {project.description}
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                {project.tags.map(tag => (
-                  <span key={tag} style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    color: 'rgba(245,237,224,0.8)',
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    fontFamily: 'monospace',
-                    letterSpacing: '0.03em',
-                  }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Personal Projects */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '32px', marginTop: '56px' }}>
-          <span style={{
+        ))}
+      </div>
+      {project.demo && (
+        <div style={{ display: 'flex', gap: '12px', marginTop: '6px' }}>
+          <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{
+            padding: '10px 20px',
             background: 'var(--accent)',
             color: '#fff',
-            padding: '6px 16px',
-            borderRadius: '99px',
-            fontSize: '0.72rem',
-            fontWeight: 800,
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
+            borderRadius: '6px',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            letterSpacing: '0.04em',
           }}>
-            Personal Projects
-          </span>
-          <div style={{ flex: 1, height: '1px', background: 'rgba(255,255,255,0.15)' }} />
+            Live Demo →
+          </a>
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
+              padding: '10px 20px',
+              border: '1px solid var(--border)',
+              color: 'var(--text)',
+              borderRadius: '6px',
+              fontSize: '0.8rem',
+              fontWeight: 600,
+              letterSpacing: '0.04em',
+            }}>
+              GitHub
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+export default function Projects() {
+  return (
+    <section id="projects" style={{ background: 'var(--surface)' }}>
+      <div className="section-container">
+        <h2 className="section-title">Selected <span>Projects</span></h2>
+
+        <GroupLabel first>AI Enablement</GroupLabel>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '24px' }}>
+          {projects.map(project => <ProjectCard key={project.title} project={project} />)}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '28px' }}>
-          {personalProjects.map(project => (
-            <div key={project.title} style={{
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.12)',
-              borderTop: '4px solid var(--accent)',
-              borderRadius: '4px',
-              padding: '32px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '14px',
-              transition: 'transform 0.2s, background 0.2s',
-            }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.1)'
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.background = 'rgba(255,255,255,0.06)'
-              }}
-            >
-              <div style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '1.75rem', fontWeight: 900, color: 'var(--accent)', lineHeight: 1 }}>
-                {project.stat}
-              </div>
-              <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#f5ede0', fontWeight: 700, fontSize: '1.2rem', lineHeight: 1.3 }}>
-                {project.title}
-              </h3>
-              <p style={{ color: 'rgba(245,237,224,0.7)', fontSize: '0.93rem', lineHeight: 1.8, flex: 1 }}>
-                {project.description}
-              </p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '4px' }}>
-                {project.tags.map(tag => (
-                  <span key={tag} style={{
-                    background: 'rgba(255,255,255,0.08)',
-                    border: '1px solid rgba(255,255,255,0.15)',
-                    color: 'rgba(245,237,224,0.8)',
-                    padding: '4px 10px',
-                    borderRadius: '99px',
-                    fontSize: '0.75rem',
-                    fontWeight: 600,
-                    fontFamily: 'monospace',
-                    letterSpacing: '0.03em',
-                  }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <div style={{ display: 'flex', gap: '12px' }}>
-                <a href={project.demo} target="_blank" rel="noopener noreferrer" style={{
-                  padding: '10px 22px',
-                  background: 'var(--accent)',
-                  color: '#fff',
-                  borderRadius: '4px',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  textDecoration: 'none',
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                }}>
-                  Live Demo →
-                </a>
-                <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
-                  padding: '10px 22px',
-                  border: '1.5px solid rgba(255,255,255,0.25)',
-                  color: 'rgba(245,237,224,0.8)',
-                  borderRadius: '4px',
-                  fontSize: '0.8rem',
-                  fontWeight: 800,
-                  textDecoration: 'none',
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase',
-                }}>
-                  GitHub
-                </a>
-              </div>
-            </div>
-          ))}
+        <GroupLabel>Personal Projects</GroupLabel>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '24px' }}>
+          {personalProjects.map(project => <ProjectCard key={project.title} project={project} />)}
         </div>
-
       </div>
     </section>
   )

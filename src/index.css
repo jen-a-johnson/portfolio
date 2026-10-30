@@ -5,20 +5,18 @@
 }
 
 :root {
-  --bg: #faf5ee;
-  --surface: #f0e6d3;
+  --bg: #faf7f2;
+  --surface: #f2ece4;
   --card: #ffffff;
-  --hero-bg: #1c1007;
-  --accent: #c4541f;
-  --accent-dark: #9e3e12;
-  --gold: #e8b435;
-  --green: #2a5240;
-  --green-dark: #1e3b2e;
-  --yellow: #f5e642;
-  --text: #1c1007;
-  --text-muted: #6b5040;
-  --text-light: #f5ede0;
-  --border: #d9cebf;
+  --hero-bg: #1a1512;
+  --accent: #b8532a;
+  --accent-dark: #93401f;
+  --accent-light: #e08a62;
+  --accent-soft: #f6e6dc;
+  --text: #1a1512;
+  --text-muted: #6b5d52;
+  --text-light: #f5efe6;
+  --border: #e4dacd;
 }
 
 html {
@@ -66,5 +64,5 @@ h2.section-title.light {
 }
 
 h2.section-title.light span {
-  color: var(--gold);
+  color: var(--accent-light);
 }

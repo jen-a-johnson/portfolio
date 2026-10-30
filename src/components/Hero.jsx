@@ -17,7 +17,7 @@ export default function Hero() {
         width: '600px',
         height: '600px',
         borderRadius: '50%',
-        border: '2px solid rgba(232,180,53,0.12)',
+        border: '1px solid rgba(245,239,230,0.08)',
         pointerEvents: 'none',
       }} />
       <div style={{
@@ -27,22 +27,22 @@ export default function Hero() {
         width: '400px',
         height: '400px',
         borderRadius: '50%',
-        border: '2px solid rgba(196,84,31,0.15)',
+        border: '1px solid rgba(184,83,42,0.25)',
         pointerEvents: 'none',
       }} />
-      {/* Yellow accent block */}
+      {/* Accent block */}
       <div style={{
         position: 'absolute',
         bottom: '0',
         left: '0',
         width: '6px',
         height: '40%',
-        background: 'var(--yellow)',
+        background: 'var(--accent-light)',
       }} />
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%', position: 'relative' }}>
         <p style={{
-          color: 'var(--yellow)',
+          color: 'var(--accent-light)',
           fontWeight: 700,
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
@@ -52,7 +52,7 @@ export default function Hero() {
           alignItems: 'center',
           gap: '12px',
         }}>
-          <span style={{ display: 'inline-block', width: '32px', height: '2px', background: 'var(--yellow)' }} />
+          <span style={{ display: 'inline-block', width: '32px', height: '2px', background: 'var(--accent-light)' }} />
           Hi, I&apos;m
         </p>
         <h1 style={{
@@ -94,7 +94,7 @@ export default function Hero() {
           textTransform: 'uppercase',
           marginBottom: '28px',
         }}>
-          <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--yellow)', flexShrink: 0 }} />
+          <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: 'var(--text-light)', flexShrink: 0 }} />
           Product Manager · SaaS B2B
         </div>
 
@@ -112,10 +112,10 @@ export default function Hero() {
 
         <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
           <a href="#projects" style={{
-            background: 'var(--yellow)',
-            color: 'var(--hero-bg)',
+            background: 'var(--accent)',
+            color: '#fff',
             padding: '15px 36px',
-            borderRadius: '4px',
+            borderRadius: '6px',
             fontWeight: 800,
             fontSize: '0.85rem',
             letterSpacing: '0.08em',
@@ -128,18 +128,18 @@ export default function Hero() {
             View Projects
           </a>
           <a href="#contact" style={{
-            border: '2px solid var(--accent)',
-            color: 'var(--accent)',
+            border: '1px solid rgba(245,239,230,0.3)',
+            color: 'var(--text-light)',
             padding: '15px 36px',
-            borderRadius: '4px',
+            borderRadius: '6px',
             fontWeight: 800,
             fontSize: '0.85rem',
             letterSpacing: '0.08em',
             textTransform: 'uppercase',
             transition: 'all 0.2s',
           }}
-            onMouseEnter={e => { e.target.style.background = 'var(--accent)'; e.target.style.color = '#fff' }}
-            onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--accent)' }}
+            onMouseEnter={e => { e.target.style.borderColor = 'var(--text-light)' }}
+            onMouseLeave={e => { e.target.style.borderColor = 'rgba(245,239,230,0.3)' }}
           >
             Get In Touch
           </a>
