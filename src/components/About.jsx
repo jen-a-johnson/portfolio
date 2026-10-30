@@ -1,3 +1,5 @@
+import Reveal from './Reveal'
+
 const skills = [
   'AI / LLM Integration',
   'Prompt Engineering',
@@ -12,14 +14,16 @@ export default function About() {
   return (
     <section id="about" style={{ background: 'var(--bg)' }}>
       <div className="section-container">
-        <h2 className="section-title">About <span>Me</span></h2>
+        <Reveal>
+          <h2 className="section-title">About <span>Me</span></h2>
+        </Reveal>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
           gap: '64px',
           alignItems: 'start',
         }}>
-          <div>
+          <Reveal>
             <p style={{ color: 'var(--text-muted)', marginBottom: '24px', fontSize: '1.1rem', lineHeight: 1.9 }}>
               I&apos;m a Product Manager in the SaaS B2B space,
               where I do a lot more than manage a roadmap. I build systems. I find the friction in how teams work,
@@ -31,9 +35,9 @@ export default function About() {
               how to use AI as a real part of their workflow — not as a gimmick, but as leverage. I&apos;m curious,
               I build fast, and I care about impact you can measure.
             </p>
-          </div>
+          </Reveal>
 
-          <div>
+          <Reveal delay={150}>
             {/* Quote callout block */}
             <div style={{
               background: 'var(--accent-soft)',
@@ -79,7 +83,7 @@ export default function About() {
                 </span>
               ))}
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

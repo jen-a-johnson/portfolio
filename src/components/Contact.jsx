@@ -1,7 +1,10 @@
+import Reveal from './Reveal'
+
 export default function Contact() {
   return (
     <section id="contact" style={{ background: 'var(--hero-bg)', borderTop: '1px solid rgba(245,239,230,0.08)' }}>
       <div className="section-container" style={{ textAlign: 'center' }}>
+        <Reveal>
         <h2 className="section-title light">Get In <span>Touch</span></h2>
         <p style={{
           color: 'rgba(245,237,224,0.65)',
@@ -72,6 +75,7 @@ export default function Contact() {
             GitHub
           </a>
         </div>
+        </Reveal>
       </div>
     </section>
   )

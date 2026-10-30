@@ -10,7 +10,7 @@ export default function Hero() {
       overflow: 'hidden',
     }}>
       {/* Big decorative circle */}
-      <div style={{
+      <div className="hero-drift" style={{
         position: 'absolute',
         top: '-120px',
         right: '-120px',
@@ -20,7 +20,8 @@ export default function Hero() {
         border: '1px solid rgba(245,239,230,0.08)',
         pointerEvents: 'none',
       }} />
-      <div style={{
+      <div className="hero-drift" style={{
+        animationDelay: '-7s',
         position: 'absolute',
         top: '-60px',
         right: '-60px',
@@ -31,7 +32,8 @@ export default function Hero() {
         pointerEvents: 'none',
       }} />
       {/* Accent block */}
-      <div style={{
+      <div className="hero-in" style={{
+        animationDelay: '0.6s',
         position: 'absolute',
         bottom: '0',
         left: '0',
@@ -41,7 +43,8 @@ export default function Hero() {
       }} />
 
       <div style={{ maxWidth: '1000px', margin: '0 auto', width: '100%', position: 'relative' }}>
-        <p style={{
+        <p className="hero-in" style={{
+          animationDelay: '0.05s',
           color: 'var(--accent-light)',
           fontWeight: 700,
           letterSpacing: '0.2em',
@@ -52,10 +55,11 @@ export default function Hero() {
           alignItems: 'center',
           gap: '12px',
         }}>
-          <span style={{ display: 'inline-block', width: '32px', height: '2px', background: 'var(--accent-light)' }} />
+          <span className="hero-line" style={{ display: 'inline-block', width: '32px', height: '2px', background: 'var(--accent-light)' }} />
           Hi, I&apos;m
         </p>
-        <h1 style={{
+        <h1 className="hero-in" style={{
+          animationDelay: '0.15s',
           fontFamily: "'Playfair Display', Georgia, serif",
           fontSize: 'clamp(4rem, 12vw, 8.5rem)',
           fontWeight: 900,
@@ -66,7 +70,8 @@ export default function Hero() {
         }}>
           Jennifer
         </h1>
-        <h1 style={{
+        <h1 className="hero-in" style={{
+          animationDelay: '0.27s',
           fontFamily: "'Playfair Display', Georgia, serif",
           fontSize: 'clamp(4rem, 12vw, 8.5rem)',
           fontWeight: 900,
@@ -80,7 +85,8 @@ export default function Hero() {
         </h1>
 
         {/* Role pill */}
-        <div style={{
+        <div className="hero-in" style={{
+          animationDelay: '0.4s',
           display: 'inline-flex',
           alignItems: 'center',
           gap: '10px',
@@ -98,7 +104,8 @@ export default function Hero() {
           Product Manager · SaaS B2B
         </div>
 
-        <p style={{
+        <p className="hero-in" style={{
+          animationDelay: '0.5s',
           fontSize: 'clamp(1.05rem, 2vw, 1.2rem)',
           color: 'rgba(245,237,224,0.65)',
           maxWidth: '500px',
@@ -110,7 +117,7 @@ export default function Hero() {
           and make sure everyone — technical or not — can keep up.
         </p>
 
-        <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
+        <div className="hero-in" style={{ animationDelay: '0.6s', display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
           <a href="#projects" style={{
             background: 'var(--accent)',
             color: '#fff',
