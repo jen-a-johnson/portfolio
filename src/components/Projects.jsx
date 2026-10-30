@@ -4,7 +4,7 @@ const personalProjects = [
     stat: 'Loan options, side by side',
     description:
       'A closing-cost tool built for mortgage loan officers who need to quote fast and explain clearly. Build a fee sheet in minutes, then switch to presentation mode for a clean, side-by-side comparison of loan options — the view a loan officer actually walks a borrower through.',
-    tags: ['Svelte', 'JavaScript', 'Hono', 'Neon Postgres'],
+    tags: ['Svelte', 'JavaScript', 'Hono', 'Neon Postgres', 'SvelteKit', 'Tailwind CSS', 'shadcn-svelte', 'Supabase'],
     demo: 'https://mymortgagebuddyapp.com/',
     github: 'https://github.com/jen-a-johnson/mymortgagebuddy',
   },
